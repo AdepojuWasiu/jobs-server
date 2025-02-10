@@ -13,7 +13,30 @@ app.use(express.json());
 
 // Test route
 app.get("/", (req, res) => {
-  res.send("✅ Job Website API is Running!");
+  res.send(`✅ Job Website API is Running!
+              >>>>>
+    To test the server you can use POSTMAN
+              >>>>>
+    To register user send post request url: https://jobs-red-ten.vercel.app/api/auth/register  body: {
+                     "name": "Your name",
+                    "email": "youremail@gmail.com",
+                      "password": "your passwoed"
+                    }
+              >>>>>>
+    To login user send post request url: https://jobs-red-ten.vercel.app/api/auth/login body: {
+                     "email": "youremail@gmail.com",
+                       "password": "your passwoed"
+                     }
+             >>>>>>>
+    To register jobs send post request url: https://jobs-red-ten.vercel.app/api/jobs body: {
+
+            "title": "job title",
+            "company": "Company name",
+            "location": "Location of job",
+            "requirements": "requiremwnts for the job"
+        }
+            >>>>>>
+    To fetch all jobs send get request url: https://jobs-red-ten.vercel.app/api/jobs body:none`);
 });
 
 app.use("/api/auth", authRoutes);
