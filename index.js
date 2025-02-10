@@ -13,30 +13,47 @@ app.use(express.json());
 
 // Test route
 app.get("/", (req, res) => {
-  res.send(`✅ Job Website API is Running!
-              >>>>>
-    To test the server you can use POSTMAN
-              >>>>>
-    To register user send post request url: https://jobs-red-ten.vercel.app/api/auth/register  body: {
-                     "name": "Your name",
-                    "email": "youremail@gmail.com",
-                      "password": "your passwoed"
-                    }
-              >>>>>>
-    To login user send post request url: https://jobs-red-ten.vercel.app/api/auth/login body: {
-                     "email": "youremail@gmail.com",
-                       "password": "your passwoed"
-                     }
-             >>>>>>>
-    To register jobs send post request url: https://jobs-red-ten.vercel.app/api/jobs body: {
-
-            "title": "job title",
-            "company": "Company name",
-            "location": "Location of job",
-            "requirements": "requiremwnts for the job"
-        }
-            >>>>>>
-    To fetch all jobs send get request url: https://jobs-red-ten.vercel.app/api/jobs body:none`);
+  res.send(`✅ Job Website API is Running!<br><br>
+  >>>>> <br>
+  To test the server you can use POSTMAN <br>
+  >>>>> <br>
+  <strong>To register user</strong>, send a POST request:<br>
+  <strong>URL:</strong> <code>https://jobs-red-ten.vercel.app/api/auth/register</code> <br>
+  <strong>Body:</strong> <br>
+  <pre>
+  {
+    "name": "Your name",
+    "email": "youremail@gmail.com",
+    "password": "your password"
+  }
+  </pre>
+  >>>>> <br>
+  <strong>To login user</strong>, send a POST request:<br>
+  <strong>URL:</strong> <code>https://jobs-red-ten.vercel.app/api/auth/login</code> <br>
+  <strong>Body:</strong> <br>
+  <pre>
+  {
+    "email": "youremail@gmail.com",
+    "password": "your password"
+  }
+  </pre>
+  >>>>> <br>
+  <strong>To register jobs</strong>, send a POST request:<br>
+  <strong>URL:</strong> <code>https://jobs-red-ten.vercel.app/api/jobs</code> <br>
+  <strong>Body:</strong> <br>
+  <pre>
+  {
+    "title": "job title",
+    "company": "Company name",
+    "location": "Location of job",
+    "requirements": "requirements for the job"
+  }
+  </pre>
+  >>>>> <br>
+  <strong>To fetch all jobs</strong>, send a GET request:<br>
+  <strong>URL:</strong> <code>https://jobs-red-ten.vercel.app/api/jobs</code> <br>
+  <strong>Body:</strong> none <br>
+  `);
 });
 
 app.use("/api/auth", authRoutes);
